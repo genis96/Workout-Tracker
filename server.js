@@ -1,13 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const morgan = require("morgan");
+const logger = require("morgan");
 
 const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.use(express.json());
 app.use(express.static("public"));
-app.use(morgan("dev"));
+app.use(logger("dev"));
 app.use(express.urlencoded({extended: true}))
 
 // Mongoose connection syntax //
@@ -21,8 +21,8 @@ mongoose.connect(
     }
 );
 
-app.use(require("./routes/api-routes"));
-app.use(require("./routes/html-routes"));
+app.use(require("./routes/api"));
+app.use(require("./routes/html"));
 
 app.listen(PORT, () => {
     console.log(`Success! App is running on port ${PORT}!`);
