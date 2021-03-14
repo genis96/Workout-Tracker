@@ -3,7 +3,7 @@ const router = require("express").Router();
 
 // GET - REQ FOR WORKOUTS PAGE
 router.get("/api/workouts", (req, res) => {
-    Workout.find({}).then(dbWorkout => {
+    Workout.aggregate({}).then(dbWorkout => {
         res.json(dbWorkout);
     }).catch(err => {
         res.status(400).json(err);
