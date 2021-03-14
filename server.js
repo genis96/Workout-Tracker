@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useUnifiedTopology: true
 });
 
-const db = mongoose.connection;
+// const db = mongoose.connection;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
