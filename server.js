@@ -13,7 +13,7 @@ app.use(logger("dev"));
 app.use(express.urlencoded({extended: true}))
 
 // Mongoose connection syntax //
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/deep-thoughts", { 
     useNewUrlParser: true, 
     useUnifiedTopology: true, 
     useCreateIndex: true, 
